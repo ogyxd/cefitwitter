@@ -18,9 +18,9 @@ $result = mysqli_query($conn, "SELECT * FROM `objave`");
             <article class="pocetna-post">
                 <h2 class="pocetna-author">Objavio: <?= $row["autor"] ?></h2>
                 <p class="pocetna-content"><?= $row["tekst"] ?></p>
-                <?php if ($row["autor"] == $usr["ime"]) { ?>
+                <?php if ($usr) { if ($row["autor"] == $usr["ime"]) { ?>
                 <a class="pocetna-delete-btn" href="./obrisi.php?id=<?php echo $row['id'] ?>">Obrisi</a>
-                <?php } ?>
+                <?php }} ?>
                 </article>
             </article>
         <?php } ?>
